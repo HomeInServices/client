@@ -1,0 +1,37 @@
+.circle {
+     border-style: solid;
+    border-width: 0px 2px;
+    border-image-outset: 2px;
+    border: 3px solid #69D3BD;
+    
+
+}
+
+div.ui-rating-star a, div.ui-rating-cancel a {
+  background-image: url("#{resource['assets/images/star.png']}");                       
+}
+
+.ui-rating-star
+{
+ background-image: url("#{resource['assets/images/star.png']}");                       
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  color:#69D3BD;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color:#69D3BD;
+  
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+    color:#69D3BD;
+   
+}

@@ -1,0 +1,136 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2 style="text-align: center; margin-top:0px">Basic Info</h2>
+
+      <form class="" method="post" style="margin-top:70px">
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Phone Number</h4>
+          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Adress</h4>
+          <textarea name="name" rows="3" class="form-control" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></textarea>
+
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">City</h4>
+          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Zip code</h4>
+          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+
+
+
+
+      </form>
+
+      <h2 class="text-center" style="margin-top: 200px">Step 1</h2>
+
+    </div>
+    <div class="col-sm-4">
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+
+        <h2 style="text-align: center; margin-top:0px">Size of your home</h2>
+
+        <div class="" style="margin-top:70px">
+
+          <div class="row">
+            <div class="col-sm-7">
+              <span style="color:#a6a6a6">How many living/dining rooms?</span>
+            </div>
+            <div class="col-sm-2">
+              <input type="number" max="15" name="" value="" style=" width:40px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            </div>
+          </div>
+<br>
+          <div class="row">
+            <div class="col-sm-7">
+              <span style="color:#a6a6a6">How many bedrooms?</span>
+            </div>
+            <div class="col-sm-2">
+              <input type="number" max="15" name="" value="" style=" width:40px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            </div>
+
+          </div>
+<br>
+          <div class="row">
+            <div class="col-sm-7">
+              <span style="color:#a6a6a6">How Many bath?</span>
+            </div>
+            <div class="col-sm-2">
+              <input type="number" max="15" name="" value="" style="align:middle; width:40px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            </div>
+          </div>
+<br>
+           <div class="row">
+            <div class="col-sm-7">
+              <span style="color:#a6a6a6">How Many kitchen?</span>
+            </div>
+            <div class="col-sm-2">
+              <input type="number" max="15" name="" value="" style="align:middle; width:40px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            </div>
+          </div>
+<br>
+          <div class="row">
+            <div class="col-sm-7">
+              <span style="color:#a6a6a6">What is the total square feet your home?</span>
+            </div>
+            <div class="col-sm-2">
+              <input type="number" max="1000" name="" value="" style="align:middle; width:40px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            </div>
+          </div>
+
+        
+
+
+        </div>
+
+      </div>
+
+ <h2 class="text-center" style="margin-top: 120px">Step 2</h2>
+
+    </div>
+    <div class="col-sm-4">
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+
+        <h2 style="text-align: center; margin-top:0px">Payment Info</h2>
+
+
+
+        <div style="margin-top:70px">
+
+
+          <h4 style="color:#a6a6a6">How do you like to receive your payments</h4>
+          <div class="container">
+            <div class="radio">
+              <label style="font-size: 17px; color:#a6a6a6"><input style=""  type="radio" name="optradio">Venmo</label>
+            </div>
+            <div class="radio">
+              <label style="font-size: 17px; color:#a6a6a6"><input type="radio"  name="optradio">Cash</label>
+            </div>
+          </div>
+
+
+          <br>
+          <div style="margin-top:90px;">
+            <button (click)="showDialogThankyou()" type="button" name="button" class="btn btn-lg" style="background:#69D3BD;border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Send Request</button>
+          </div>
+        </div>
+
+
+
+      </div>
+ <h2 class="text-center" style="margin-top: 120px">Step 3</h2>
+    </div>
+  </div>
+</div>
+
+
+<!--      <p-dialog modal="modal" [contentStyle]="{'overflow':'visible'}" header="Thank you" [(visible)]="displaythankyou" [responsive]="true">
+
+            <app-thankyouclient></app-thankyouclient>
+          </p-dialog> -->

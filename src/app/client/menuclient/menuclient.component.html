@@ -1,0 +1,120 @@
+<app-header></app-header>
+<div class="container">
+  <p-dataScroller [value]="hires" [rows]="6">
+  <!--  <p-header>
+      Workers
+    </p-header> -->
+    <ng-template *ngFor="let hire of hires" let-hire pTemplate="item">
+      <div class="ui-grid ui-grid-responsive ui-fluid" style="padding:20px">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-5">
+            <h3 style="margin-left: 20px;margin-top:-10px;"> {{hire.name}}</h3>
+            <img src="{{hire.urlprofile}}" class="img-circle circle" style="margin-left:40px; margin-top:10px" width="70" height="70"
+            />
+          </div>
+          <div class="ui-grid-col-8">
+            <h4 style="margin-top:-10px; margin-left:70px; color:#a6a6a6">Skills</h4>
+            <div class="ui-grid ui-grid-responsive ui-fluid" style="margin-top:20px">
+
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3">
+                  <p>{{hire.skill1}}</p>
+                </div>
+                <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px;  "></div>
+                <div class="ui-grid-col-5  ">
+                  <div class="rating">
+                    <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> 
+                  </div>
+
+                </div>
+              </div>
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3">
+                  <p>{{hire.skill2}}</p>
+                </div>
+                <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px;  "></div>
+                <div class="ui-grid-col-5">
+                  <div class="rating">
+                  <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> 
+                  </div>
+                </div>
+              </div>
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-3">
+                  <p>{{hire.skill3}}</p>
+                </div>
+                <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px;  "></div>
+                <div class="ui-grid-col-5">
+                   <div class="rating">
+                   <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> <span style="font-size: 150%;">☆</span> 
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="ui-grid-col-10">
+            <h4 style="margin-top:-10px; color:#a6a6a6">Last Hired By</h4>
+            <i class="fa fa-facebook-official" style="color:#3b5998; margin-left: 50px" aria-hidden="true"></i>
+            <div class="ui-grid ui-grid-responsive ui-fluid">
+
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                  <div class="vr" style="font-size:80px; background:#DDD; height:70px; width:1px;margin-left:5px; "> </div>
+
+                </div>
+
+                <div class="ui-grid-col-2">
+
+                  <img src="{{hire.friendlist}}" class="img-circle circle" width="40" height="40" />
+                </div>
+                <div class="ui-grid-col-2">
+                  <img src="{{hire.friendlist}}" class="img-circle circle" width="40" height="40" />
+                </div>
+                <div class="ui-grid-col-2">
+                  <img src="{{hire.friendlist}}" class="img-circle circle" width="40" height="40" />
+                </div>
+                <div class="ui-grid-col-2">
+                  <img src="{{hire.friendlist}}" class="img-circle circle" width="40" height="40" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-grid-col-3">
+            <div class="ui-grid ui-grid-responsive ui-fluid">
+              <div class="ui-grid-row">
+                <div class="ui-grid-col-2" style="margin-top:20px">
+                  <a (click)="showDialog()">
+                    <p style="font-size:20px; color:#a6a6a6">
+                      <u>Schedule</u>
+                    </p>
+                  </a>
+                </div>
+                <div class="ui-grid-col-10 fa-2x " style="margin-top:40px">
+                  <i class="fa fa-comment-o" style="color:#69D3BD" aria-hidden="true"></i>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </ng-template>
+  </p-dataScroller>
+
+    <p-dialog modal="modal" header="Schedule" [(visible)]="display" [responsive]="true" width="1050" positionTop="60" showEffect="fade">
+          <app-calendar></app-calendar>
+          <br>
+          <div class="container" >
+            <a>  <button routerLink="/clients/formclient" type="button" name="button" class="btn btn-lg" style="background:#69D3BD;border-radius: 6px; color: #ffffff; font-size: 15px; padding: 10px 100px;" >Finish Scheduling</button></a>
+          </div>
+
+        </p-dialog>
+
+</div>

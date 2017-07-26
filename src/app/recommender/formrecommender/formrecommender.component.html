@@ -1,0 +1,139 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2 style="text-align: center; margin-top:0px">Work Experience</h2>
+
+      <div style="margin-top:70px">
+
+
+        <br>
+        <div class="">
+          <p style="color:#a6a6a6">For how long this individual has been working or worked for you</p>
+          <select class="" name="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid; padding: 5px 20px;">
+    <option value="">A month</option>
+    <option value="">More than one but less than 6 months</option>
+    <option value="">Six months</option>
+    <option value="">More than 6 but less than a year</option>
+    <option value="">A year</option>
+
+  </select>
+        </div>
+        <br>
+        <div class="">
+          <p style="color:#a6a6a6">Average price per hour thar she/he charge you</p>
+          <br>
+          <div>
+            <p-slider [(ngModel)]="val" [step]="20"></p-slider>
+
+
+            <span style="margin:0px 0px 0px 0px;">10</span>
+
+
+            <span style="margin:0px 0px 0px 140px;">20</span>
+
+
+            <span style="margin:0px 0px 0px 150px;">+30</span>
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+      <h2 class="text-center" style="margin-top:370px">Step 1</h2>
+    </div>
+    <div class="col-sm-4">
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+        <h2 style="text-align: center; margin-top:0px">Skills</h2>
+        <div style="margin-top:70px; padding:10px">
+          <p style="color:#a6a6a6">Please provide information about the worker</p>
+          <br>
+          <div class="">
+            <p style="color:#a6a6a6">Please validate her/his skills</p>
+            <br>
+            <div class="container">
+              <div>
+                <h4 style="color:#a6a6a6">Skill 1</h4>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <input type="text" name="" value="" style="width:150px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+                </div>
+                <div class="col-sm-2">
+                  <p-rating [cancel]="false" readonly="true" stars="4" [(ngModel)]="val"></p-rating>
+                </div>
+
+              </div>
+            </div>
+            <br>
+            <div class="container">
+              <div>
+                <h4 style="color:#a6a6a6">Skill 2</h4>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <input type="text" name="" value="" style="width:150px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+                </div>
+                <div class="col-sm-2">
+                  <p-rating [cancel]="false" readonly="true" stars="4" [(ngModel)]="val"></p-rating>
+                </div>
+
+              </div>
+            </div>
+            <br>
+            <div class="container">
+              <div>
+                <h4 style="color:#a6a6a6">Skill 3</h4>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <input type="text" name="" value="" style="width:150px; border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+                </div>
+                <div class="col-sm-2">
+                  <p-rating [cancel]="false" readonly="true" stars="4" [(ngModel)]="val"></p-rating>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      <h2 class="text-center" style="margin-top:170px">Step 2</h2>
+    </div>
+    <div class="col-sm-4">
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+        <h2 style="text-align: center; margin-top:0px">Employer Referral</h2>
+        <div style="margin-top:70px; padding:10px">
+
+          <p style="color:#a6a6a6">Please provide a sor description of the qualitY of the job by this person</p>
+          <div class="">
+            <textarea name="name" rows="8" cols="40" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;" placeholder="Provide your recommendation message here"></textarea>
+
+          </div>
+
+          <!--   <p-dialog modal="modal" [contentStyle]="{'overflow':'visible'}" header="Book"  [(visible)]="display"  [responsive]="true"  positionTop="10" >
+<app-thankyourecommender></app-thankyourecommender>
+</p-dialog> -->
+
+          <br>
+          <br>
+          <div style="margin-top:90px;">
+            <a (click)="showDialog()"> <button type="button" name="button" class="btn btn-lg" style="background:#69D3BD;border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Send</button></a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <h2 class="text-center" style="margin-top:170px">Step 3</h2>
+    </div>
+  </div>
+</div>

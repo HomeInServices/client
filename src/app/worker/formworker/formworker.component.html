@@ -1,0 +1,132 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2 style="text-align: center; margin-top:0px">Basic information</h2>
+     
+     <div style="margin-top:110px">
+
+     
+      <form class="" method="post">
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Phone number</h4>
+          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Zip code</h4>
+          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">Miles you are willing to drive</h4>
+          <input type="text" class="form-control" name="" value="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+
+        </div>
+
+
+      </form>
+</div>
+
+<h2 class="text-center" style="margin-top: 350px;">Step 1</h2>
+    </div>
+    <div class="col-sm-4">
+     <!-- separator -->
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px ">
+
+
+        <h2 style="text-align: center; margin-top:0px;">Skills and payment options</h2>
+      <div style="margin-top:70px">
+
+     
+       
+
+        <h4 style="color:#a6a6a6">How do you like to receive your payments</h4>
+        <div class="container">
+          <div class="radio">
+            <label style="font-size: 17px; color:#a6a6a6"><input   type="radio" name="optradio">Venmo</label>
+          </div>
+          <div class="radio">
+            <label style="font-size: 17px; color:#a6a6a6"><input type="radio"  name="optradio">Cash</label>
+          </div>
+        </div>
+        <div class="">
+          <h4 style="color:#a6a6a6">Type 3 skills you have</h4>
+          <div class="container">
+            <span style="color:#a6a6a6">Skill 1 <input type="text"  name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+          </div>
+          <br>
+          <div class="container">
+            <span style="color:#a6a6a6">Skill 2 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+          </div>
+          <br>
+          <div class="container">
+            <span style="color:#a6a6a6">Skill 3 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+          </div>
+
+
+        </div>
+         </div>
+      </div>
+        <h2 class="text-center" style="margin-top: 200px">Step 2</h2>
+    </div>
+
+
+
+    <div class="col-sm-4">
+      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+
+
+
+        <h2 style="text-align: center; margin-top:0px">Employer referral/Availability</h2>
+       
+      <div style="margin-top:70px">
+
+    
+        <form class="" method="post">
+          <div class="">
+            <h4 class="text-center" style="color:#a6a6a6">Name of last employer</h4>
+            <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+          </div>
+          <div class="">
+            <h4 class="text-center" style="color:#a6a6a6">Phone</h4>
+            <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
+            <h4 class="text-center" style="color:#a6a6a6">Email</h4>
+             <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
+          </div>
+         <!-- <p-dialog modal="modal" [contentStyle]="{'overflow':'visible'}" header="Thank you" [(visible)]="displaythankyou" [responsive]="true">
+
+            <app-thankyouworker></app-thankyouworker>
+          </p-dialog> -->
+
+          <div class="">
+            <h4 style="color:#a6a6a6">Indicate what days you are NOT avaible</h4>
+          <!--  <p-dialog modal="modal" header="Schedule" [(visible)]="display" [responsive]="true" width="1250" positionTop="60">
+              <app-calendar appendTo="body"></app-calendar>
+            </p-dialog> -->
+            <button type="button" (click)="showDialog()" name="button" class="btn btn-lg btn-primary" style="border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Select Availability</button>
+
+          </div>
+<br>
+<br>
+
+       <div>
+      <a>  <button (click)="showDialogThankyou()" type="button" name="button" class="btn btn-lg" style="background:#69D3BD;border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;" >DONE</button></a>
+
+    </div>
+          
+
+        </form>
+  </div>
+      <h2 class="text-center" style="margin-top: 170px">Step 3</h2>
+      </div>
+
+
+
+    </div>
+
+
+   
+  </div>
+
+
+
+</div>

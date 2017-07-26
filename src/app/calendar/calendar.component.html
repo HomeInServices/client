@@ -1,0 +1,41 @@
+<div>
+
+
+<div class="row">
+<div class="col-md-5">
+    <p-schedule [events]="events" [header]="header" defaultDate="2017-02-01" [eventLimit]="4" [editable]="true" (onDayClick)="handleDayClick($event)"
+        (onEventClick)="handleEventClick($event)">
+    </p-schedule>
+</div>
+
+<div class="col-md-5" >
+    <p>Please provide the day and the time you need the service</p>
+
+    <div>
+        <div>
+            <span>From:</span>
+            <p-calendar [(ngModel)]="date8" [timeOnly]="true" readonlyInput="false" ></p-calendar>
+            <span>To:</span>
+             <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+        </div>
+        <div>
+            <select name="timeselect" id="">
+        <option value="">Morning</option>
+        <option value="">Afternon</option>
+    </select>
+        </div>
+
+    </div>
+    <p>Send your especial requeriments or task list </p>
+
+    <div>
+        <textarea name="" id="" cols="35" rows="5"></textarea>
+
+    </div>
+    <div>
+        <button (click)="saveEvent()" type="button" name="button" class="btn btn-lg" style="background:#69D3BD;border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Add</button>
+    </div>
+
+
+</div>
+</div>
