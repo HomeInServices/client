@@ -15,41 +15,49 @@ import {CalendarComponent} from './calendar/calendar.component';
 
 
 
-const appRoutes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch:'full'},
+const appRoutes: Routes = 
+[
+  {
+    path: '', redirectTo: '/home', pathMatch:'full'
+  },
   {
     path: 'workers',
-  component:WorkerComponent
-},  
-  {path: 'clients',
-  component:ClientComponent
-},
-{
-      path: 'workers/formworker',
-      component: FormworkerComponent
+    component:WorkerComponent
+  },  
+  {
+    path: 'clients',
+    component:ClientComponent
+  },
+  { 
+    path: 'workers/formworker',
+    component: FormworkerComponent
+  },
+  {
+    path: 'workers/menuworker',
+    component: MenuclientComponent
+  },
+  {
+    path: 'clients/menuclient',
+    component: MenuclientComponent
+  },
+  {
+    path: 'clients/formclient',
+    component: FormclientComponent
     },
-    {
-      path: 'workers/menuworker',
-      component: MenuclientComponent
-    },
-     {
-      path: 'clients/menuclient',
-      component: MenuclientComponent
-    },
-    {
-      path: 'clients/formclient',
-      component: FormclientComponent
-    },
-  {path: 'home', component:HomeComponent},
+  {
+    path: 'home', component:HomeComponent
+  },
   {
     path: 'recommender', 
     component: RecommenderComponent
   },
-    {
-      path:'recommender/formrecommender',
-      component: FormrecommenderComponent
-    },
-  {path: 'schedule', component:CalendarComponent},
+  {
+    path:'recommender/formrecommender',
+    component: FormrecommenderComponent
+  },
+  {
+    path: 'schedule', component:CalendarComponent
+  },
 ];
 
 @NgModule({
