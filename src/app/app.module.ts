@@ -15,8 +15,6 @@ import {DialogModule} from 'primeng/primeng';
 import {DataListModule} from 'primeng/primeng';
 import {DataScrollerModule} from 'primeng/primeng';
 
-
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -29,6 +27,9 @@ import {DataworkerService} from './services/dataworker.service';
     AppComponent,
     HeaderComponent,
   ],
+  exports: [
+       HeaderComponent 
+    ],
   imports: [
     BrowserModule,
     FormsModule,

@@ -17,14 +17,15 @@ import { WorkerRoutingModule } from './worker-routing.module';
       WorkerComponent,
        ThankyouworkerComponent,
        MenuworkerComponent,
-       FormworkerComponent
+       FormworkerComponent,
+       
     ],
     providers: [],//[HttpService]
     exports: [
        WorkerComponent,
        ThankyouworkerComponent,
        MenuworkerComponent,
-       FormworkerComponent 
+       FormworkerComponent
     ]
 })
 export class WorkerModule { }
