@@ -8,16 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuworkerComponent implements OnInit {
 
-
-
-
   constructor() { }
 
   ngOnInit() {
   }
-
-
- 
 
 
 }
