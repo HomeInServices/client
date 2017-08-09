@@ -2,17 +2,20 @@
 
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { FacebookModule, FacebookService } from 'ngx-facebook';
+
 /**
  * Home Module
  */
 @NgModule({
     imports: [        
-         HomeRoutingModule
+         HomeRoutingModule,
+         FacebookModule.forRoot()
     ],
     declarations: [
         HomeComponent
     ],
-    providers: [],
+    providers: [FacebookService],
     exports: [
         HomeComponent
     ]

@@ -15,22 +15,31 @@ import {DialogModule} from 'primeng/primeng';
 import {DataListModule} from 'primeng/primeng';
 import {DataScrollerModule} from 'primeng/primeng';
 
+//Facebook javascript wrapper
+import { FacebookModule } from 'ngx-facebook';
+
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 
 import { AppRoutingModule} from './app-routing.module';
 
 import {DataworkerService} from './services/dataworker.service';
+import { AppstartModule } from './appstart/appstart.module';
+import {HomeModule} from './home/home.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
+    AppComponent,/*
+    AppstartComponent,
+    HomeComponent*/
   ],
-  exports: [
-       HeaderComponent 
-    ],
+  
   imports: [
+    AppstartModule,
+    HomeModule,
+
+    FacebookModule.forRoot(),
+    
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -42,7 +51,8 @@ import {DataworkerService} from './services/dataworker.service';
     CalendarModule,
     DialogModule,
     DataListModule,
-    DataScrollerModule
+    DataScrollerModule,
+    
 
 
   ],

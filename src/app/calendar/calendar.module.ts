@@ -1,14 +1,21 @@
-﻿import { NgModule } from "@angular/core";
+﻿import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+import { CommonModule } from '@angular/common';
 
 import { CalendarComponent } from './calendar.component';
 import { CalendarRoutingModule} from './calendar-routing.module';
+
+import {ScheduleModule,CalendarModule} from 'primeng/primeng';
 
 /**
  * Calendar Module
  */
 @NgModule({
     imports: [        
-        CalendarRoutingModule       
+        CalendarRoutingModule,
+        ScheduleModule,
+        CalendarModule, 
+        CommonModule      
     ],
     declarations: [
         CalendarComponent
@@ -16,6 +23,8 @@ import { CalendarRoutingModule} from './calendar-routing.module';
     providers: [],
     exports: [
         CalendarComponent
-    ]
+    ],
+    
+    schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA] 
 })
-export class CalendarModule { }
+export class CalModule { }
