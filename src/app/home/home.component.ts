@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http, RequestOptions, Headers} from '@angular/http';
+import {Http, RequestOptions, Headers, URLSearchParams} from '@angular/http';
 
 import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-facebook';
 
@@ -37,9 +37,44 @@ export class HomeComponent implements OnInit {
     };
 
     this.fb.login(options)
-      .then((response: LoginResponse) => console.log('Logged in', response))
+      .then((response: LoginResponse) => this.getDataFB(response)
+    )
       .catch(e => console.error('Error logging in'));
   }
+getDataFB(response: LoginResponse){
+
+  {
+    let locVar = "worker";
+    let accessToken = response.authResponse.accessToken.toString();
+    let facebookID = response.authResponse.userID.toString();
+   
+    const headers: Headers = new Headers();
+   headers.append('Accept', 'application/json');
+   headers.append('Content-Type', 'application/json');
+   headers.append('Access-Control-Allow-Origin', '*');
+   headers.append('Content-Type','application/x-www-form-urlencoded');
+
+   let params: URLSearchParams = new URLSearchParams();
+    params.set('loc', locVar);
+    params.set('aT', accessToken);
+    params.set('fId', facebookID);
+
+   const options = new RequestOptions({
+     headers: headers,
+     params: params
+   });
+
+    let baseUrl ="http://localhost:58816/api/home/reg"
+    this.http.get(baseUrl, options)
+      // Call map on the response observable to get the parsed people object
+      .map(res => res.json())
+      // Subscribe to the observable to get the parsed people object and attach it to the
+      // component
+      .subscribe(data => this.data = data);
+
+      console.log(this.data);
+    }
+}
 
   /*
   login(){
