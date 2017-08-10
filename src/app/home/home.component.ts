@@ -9,7 +9,8 @@ import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-f
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
+  serverResponse:any;
   data:any;
   constructor(private http:Http, private fb: FacebookService) { 
 
@@ -44,9 +45,11 @@ export class HomeComponent implements OnInit {
 getDataFB(response: LoginResponse){
 
   {
+    
     let locVar = "worker";
     let accessToken = response.authResponse.accessToken.toString();
     let facebookID = response.authResponse.userID.toString();
+    
    
     const headers: Headers = new Headers();
    headers.append('Accept', 'application/json');
@@ -70,9 +73,9 @@ getDataFB(response: LoginResponse){
       .map(res => res.json())
       // Subscribe to the observable to get the parsed people object and attach it to the
       // component
-      .subscribe(data => this.data = data);
+      .subscribe(data => this.serverResponse = data );
 
-      console.log(this.data);
+      console.log(JSON.stringify(this.serverResponse));
     }
 }
 
