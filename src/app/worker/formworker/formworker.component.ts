@@ -18,7 +18,7 @@ export class FormworkerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+      console.log("Form worker init");
   }
 
   showDialog() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, RequestOptions, Headers, URLSearchParams} from '@angular/http';
-
+import {Router} from '@angular/router';
 import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-facebook';
 
 @Component({
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   
   serverResponse:any;
   data:any;
-  constructor(private http:Http, private fb: FacebookService) { 
+  constructor(private http:Http, private fb: FacebookService, private router: Router) { 
 
     let initParams: InitParams = {
       appId: '1734115113548184',
@@ -76,6 +76,8 @@ getDataFB(response: LoginResponse){
       .subscribe(data => this.serverResponse = data );
 
       console.log(JSON.stringify(this.serverResponse));
+      this.router.navigateByUrl('/appstart/worker/formworker');
+      
     }
 }
 
