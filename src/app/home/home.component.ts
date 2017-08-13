@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http, RequestOptions, Headers, URLSearchParams} from '@angular/http';
+import {Http, RequestOptions, Headers, URLSearchParams,Response } from '@angular/http';
 import {Router} from '@angular/router';
 import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-facebook';
 
@@ -10,8 +10,8 @@ import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-f
 })
 export class HomeComponent implements OnInit {
   
-  serverResponse:any;
-  data:any;
+  private serverResponse:any;
+  //data:any;
   constructor(private http:Http, private fb: FacebookService, private router: Router) { 
 
     let initParams: InitParams = {
@@ -69,11 +69,12 @@ getDataFB(response: LoginResponse){
 
     let baseUrl ="http://localhost:58816/api/home/reg"
     this.http.get(baseUrl, options)
-      // Call map on the response observable to get the parsed people object
-      .map(res => res.json())
-      // Subscribe to the observable to get the parsed people object and attach it to the
+      // Call map on the response observable to get the parsed object
+      .map((res: Response) => res.json())
+      // Subscribe to the observable to get the parsed object and attach it to the
       // component
-      .subscribe(data => this.serverResponse = data );
+      .subscribe(data => this.serverResponse=data );
+      //.subscribe(data => console.log(data) );
 
       console.log(JSON.stringify(this.serverResponse));
       this.router.navigateByUrl('/appstart/worker/formworker');
