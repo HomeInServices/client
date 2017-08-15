@@ -3,6 +3,7 @@
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
+import {AppstartComponent} from './appstart.component';
 import { AppstartRoutingModule } from './appstart-routing.module';
 /**
  * Appstart Module
@@ -10,16 +11,25 @@ import { AppstartRoutingModule } from './appstart-routing.module';
 @NgModule({
     imports: [        
         CommonModule,
-        AppstartRoutingModule
+        AppstartRoutingModule,
+        
     ],
     declarations: [
+        AppstartComponent,
         HeaderComponent
     ],
     providers: [],
     exports: [
+        AppstartComponent,
         HeaderComponent
     ],
     
     schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA] 
 })
-export class AppstartModule { }
+export class AppstartModule { 
+
+    constructor()
+    {
+       console.log("Appstart Module");
+    }
+}

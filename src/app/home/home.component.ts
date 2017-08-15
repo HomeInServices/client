@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http, RequestOptions, Headers, URLSearchParams,Response } from '@angular/http';
 import {Router} from '@angular/router';
 import { FacebookService, InitParams, LoginResponse, LoginOptions  } from 'ngx-facebook';
+import {LoginuserService} from '../loginuser.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   
   private serverResponse:any;
   //data:any;
-  constructor(private http:Http, private fb: FacebookService, private router: Router) { 
+  constructor(private http:Http, private fb: FacebookService, private router: Router, private lu: LoginuserService) { 
 
     let initParams: InitParams = {
       appId: '1734115113548184',
@@ -73,11 +74,19 @@ getDataFB(response: LoginResponse){
       .map((res: Response) => res.json())
       // Subscribe to the observable to get the parsed object and attach it to the
       // component
-      .subscribe(data => this.serverResponse=data );
+      .subscribe(data => {
+        //this.lu.facebookId = data.
+        console.log(data);
+        this.lu.role = data.role;
+        this.lu.facebookId = data.facebookId;
+        this.lu.sysId = data.sysId;
+
+        this.router.navigateByUrl('/appstart/worker/formworker');
+      } );
       //.subscribe(data => console.log(data) );
 
-      console.log(JSON.stringify(this.serverResponse));
-      this.router.navigateByUrl('/appstart/worker/formworker');
+      //console.log(JSON.stringify(this.serverResponse));
+      //this.router.navigateByUrl('/appstart/worker/formworker');
       
     }
 }

@@ -25,6 +25,10 @@ import { AppRoutingModule} from './app-routing.module';
 import {DataworkerService} from './services/dataworker.service';
 import { AppstartModule } from './appstart/appstart.module';
 import {HomeModule} from './home/home.module';
+import {WorkerModule} from './worker/worker.module';
+
+import {LoginuserService} from './loginuser.service';
+
 
 
 @NgModule({
@@ -53,10 +57,12 @@ import {HomeModule} from './home/home.module';
     DataListModule,
     DataScrollerModule,
     
-
-
   ],
-  providers: [DataworkerService],
+  providers: [DataworkerService, LoginuserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+ constructor(){
+   console.log("AppModule init");
+ }
+}
