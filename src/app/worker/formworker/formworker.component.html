@@ -9,23 +9,27 @@
       <form class="" method="post">
         <div class="">
           <h4 class="text-center" style="color:#a6a6a6">Phone number</h4>
-          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+          <input type="text" class="form-control" name="phone" [(ngModel)] ="bi.phone" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
         </div>
         <div class="">
           <h4 class="text-center" style="color:#a6a6a6">Street</h4>
-          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+          <input type="text" class="form-control" name="Street" [(ngModel)] ="bi.Street" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+        </div>
+        <div class="">
+          <h4 class="text-center" style="color:#a6a6a6">City</h4>
+          <input type="text" class="form-control" name="City" [(ngModel)] ="bi.city" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
         </div>
         <div class="">
           <h4 class="text-center" style="color:#a6a6a6">State</h4>
-          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+          <input type="text" class="form-control" name="State" [(ngModel)] ="bi.State" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
         </div>
         <div class="">
           <h4 class="text-center" style="color:#a6a6a6">Zip code</h4>
-          <input type="text" class="form-control" name="" value="" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+          <input type="text" class="form-control" name="Zipcode" [(ngModel)] ="bi.Zipcode" placeholder="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
         </div>
         <div class="">
           <h4 class="text-center" style="color:#a6a6a6">Miles you are willing to drive</h4>
-          <input type="text" class="form-control" name="" value="" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
+          <input type="number" class="form-control" name="MilesWantToDrive" [(ngModel)] ="bi.MilesWantToDrive" style="border-radius: 6px;border-color:#69D3BD;border-style:solid;">
 
         </div>
 
@@ -33,11 +37,11 @@
       </form>
 </div>
 
-<h2 class="text-center" style="margin-top: 200px;">Step 1</h2>
+<h2 class="text-center" style="margin-top: 132px;">Step 1</h2>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="border-left: 1px solid #DDD;border-right: 1px solid #DDD;">
      <!-- separator -->
-      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px ">
+      <div style="top: 70px; padding:10px; height:500px ">
 
 
         <h2 style="text-align: center; margin-top:0px;">Skills and payment options</h2>
@@ -49,27 +53,46 @@
         <h4 style="color:#a6a6a6">How do you like to receive your payments</h4>
         <div class="container">
           <div class="radio">
-            <label style="font-size: 17px; color:#a6a6a6"><input   type="radio" name="optradio">Venmo</label>
+            <label style="font-size: 17px; color:#a6a6a6"><input type="radio" value="Venmo" name="paymentType" [ngModel]="spo.paymentType" >Venmo</label>
           </div>
           <div class="radio">
-            <label style="font-size: 17px; color:#a6a6a6"><input type="radio"  name="optradio">Cash</label>
+            <label style="font-size: 17px; color:#a6a6a6"><input type="radio" value="Cash" name="paymentType" [ngModel]="spo.paymentType" >Cash</label>
           </div>
         </div>
         <div class="">
-          <h4 style="color:#a6a6a6">Type 3 skills you have</h4>
+          <h4 style="color:#a6a6a6">Type skills you have</h4>
+          <div class="container"><!--
+            <div *ngFor="let skill of spo.SkillIds">
+              <div class="container">
+                  <span style="color:#a6a6a6; margin-bottom:2px">Skill <input type="text"  name="Skill" [(ngModel)] ="skill.Skill" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                  <br>
+              </div>
+            </div>
+            -->
           <div class="container">
-            <span style="color:#a6a6a6">Skill 1 <input type="text"  name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+              <span style="color:#a6a6a6">Skill 1 <input type="text"  name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
+                <br>
+                <div class="container">
+                  <span style="color:#a6a6a6">Skill 2 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
+                <br>
+                <div class="container">
+                  <span style="color:#a6a6a6">Skill 3 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
           </div>
-          <br>
-          <div class="container">
-            <span style="color:#a6a6a6">Skill 2 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
-          </div>
-          <br>
-          <div class="container">
-            <span style="color:#a6a6a6">Skill 3 <input type="text" name="" value="" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
-          </div>
-
-
+            <!--<div class="container">
+              <span style="color:#a6a6a6">Skill 1 <input type="text"  name="" [(ngModel)] ="spo.name" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
+                <br>
+                <div class="container">
+                  <span style="color:#a6a6a6">Skill 2 <input type="text" name="" [(ngModel)] ="user.BemsId" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
+                <br>
+                <div class="container">
+                  <span style="color:#a6a6a6">Skill 3 <input type="text" name="" [(ngModel)] ="user.BemsId" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;"></span>
+                </div>
+          -->
         </div>
          </div>
       </div>
@@ -79,7 +102,7 @@
 
 
     <div class="col-sm-4">
-      <div style=" border-left: 1px solid #DDD;  top: 70px; padding:10px; height:500px; ">
+      <div style="top: 70px; padding:10px; height:500px; ">
 
 
 
@@ -91,13 +114,13 @@
         <form class="" method="post">
           <div class="">
             <h4 class="text-center" style="color:#a6a6a6">Name of last employer</h4>
-            <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;">
+            <input type="text" name="name" [(ngModel)] ="wei.name" placeholder="" class="form-control" style="border-radius: 6px;border-color:#69D3BD; border-style:solid;">
           </div>
           <div class="">
             <h4 class="text-center" style="color:#a6a6a6">Phone</h4>
-            <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
+            <input type="text" name="phone" [(ngModel)] ="wei.phone" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
             <h4 class="text-center" style="color:#a6a6a6">Email</h4>
-             <input type="text" name="" value="" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
+             <input type="text" name="email" [(ngModel)] ="wei.email" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
           </div>
          <!-- <p-dialog modal="modal" [contentStyle]="{'overflow':'visible'}" header="Thank you" [(visible)]="displaythankyou" [responsive]="true">
 
@@ -106,11 +129,13 @@
 
           <div class="">
             <h4 style="color:#a6a6a6">Indicate what days you are NOT avaible</h4>
+            <input type="text" name="availability" [(ngModel)] ="wei.availability" placeholder="" class="form-control" style="border-radius: 6px; border-color:#69D3BD;border-style:solid;">
+          
           <!--  <p-dialog modal="modal" header="Schedule" [(visible)]="display" [responsive]="true" width="1250" positionTop="60">
               <app-calendar appendTo="body"></app-calendar>
             </p-dialog> -->
-            <button type="button" (click)="showDialog()" name="button" class="btn btn-lg btn-primary" style="border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Select Availability</button>
-
+            <!--<button type="button" (click)="showDialog()" name="button" class="btn btn-lg btn-primary" style="border-radius: 6px; color: #ffffff; font-size: 20px; padding: 10px 100px;">Select Availability</button>
+              -->
           </div>
 <br>
 <br>
@@ -122,12 +147,9 @@
           
 
         </form>
-  </div>
-      <h2 class="text-center" style="margin-top: 170px">Step 3</h2>
       </div>
-
-
-
+      <h2 class="text-center" style="margin-top: 189px">Step 3</h2>
+      </div>
     </div>
 
 

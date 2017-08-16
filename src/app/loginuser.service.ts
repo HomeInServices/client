@@ -5,7 +5,7 @@ export class LoginuserService {
 
   public _role: any;
   public _facebookId: any;
-  public _sysId: any;
+  private _sysId: any;
 
   constructor() { 
     console.log("loginuserService init");

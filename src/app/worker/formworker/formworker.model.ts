@@ -1,5 +1,5 @@
         
-        export interface BasicInformation 
+        export class BasicInformation 
         {
             facebookid: string;
             phone: string;
@@ -9,27 +9,48 @@
             State: string;
             country: string;
             Zipcode: string;
+
+            constructor(){
+                this.facebookid = '';
+                this.phone = '';
+                this.MilesWantToDrive = 0;
+                this.Street = '';
+                this.city = '';
+                this.State = '';
+                this.country = '';
+                this.Zipcode = '';    
+            }
         }
 
-        export interface SkillsPaymentOptions 
+        export class SkillsPaymentOptions 
         {
             facebookid: string;
-            SkillIds: Array<number>;
+            SkillIds: Array<any>;
             paymentType: string;
-            billingAddress: string;
+            constructor(){
+                this.facebookid = '';
+            this.paymentType = '';
+            }
         }
 
 
-        export interface WorkerEmployerInformation 
+        export class WorkerEmployerInformation 
         {
             facebookid: string;
             phone: number;
             email: string;
             name: string;
             availability: string;
+            constructor(){
+                this.facebookid ='';
+            this.phone = 0;
+            this.email = '';
+            this.name = '';
+            this.availability ='';
+            }
         }
 
-        export interface WorkerSchedule 
+        export class WorkerSchedule 
         {
             facebookid: string;
             SkillIds: Array<number>;

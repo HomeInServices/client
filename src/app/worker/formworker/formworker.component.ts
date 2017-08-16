@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Http, RequestOptions, Headers, Response} from '@angular/http';
 import {LoginuserService} from '../../loginuser.service';
 
+import {BasicInformation, SkillsPaymentOptions, WorkerEmployerInformation } from './formworker.model';
+
 
 @Component({
   selector: 'app-formworker',
@@ -13,6 +15,10 @@ export class FormworkerComponent implements OnInit {
   display: boolean = false;
   displaythankyou: boolean = false;
   serverResponse: any;
+  
+  public bi:BasicInformation;
+  public spo:SkillsPaymentOptions;
+  public wei:WorkerEmployerInformation;
 
 
   constructor(private http: Http, private lu: LoginuserService) { 
@@ -20,6 +26,11 @@ export class FormworkerComponent implements OnInit {
         console.log("form worker");
         console.log(this.lu.role+ ","+ this.lu.facebookId+ ","+ this.lu.sysId);            
         console.log("data received from service");
+
+        this.bi = new BasicInformation();
+        this.spo = new SkillsPaymentOptions();
+        this.wei = new WorkerEmployerInformation();
+        
   }
 
   ngOnInit() {
@@ -44,7 +55,41 @@ export class FormworkerComponent implements OnInit {
       .map((res: Response) => res.json())
       // Subscribe to the observable to get the parsed people object and attach it to the
       // component
-      .subscribe(data => console.log(data));
+      .subscribe(data => {
+        this.serverResponse = data;
+        console.log(this.serverResponse)
+        /**
+         * Assign values here
+         */
+        
+        this.bi.facebookid = this.lu._facebookId;
+        this.bi.phone = this.serverResponse.Phone;
+        this.bi.Street = this.serverResponse.Address[0].Street;
+        this.bi.city = this.serverResponse.Address[0].City;
+        this.bi.State = this.serverResponse.Address[0].State;
+        this.bi.Zipcode = this.serverResponse.Address[0].Zipcode;
+        this.bi.MilesWantToDrive = this.serverResponse.Availability.MilesWillingToDrive;
+
+        this.spo.facebookid = this.lu._facebookId;
+        this.spo.paymentType = this.serverResponse.Payment.PaymentMode;
+        this.spo.SkillIds = this.serverResponse.Skills;//array
+
+        this.wei.availability = this.serverResponse.Availability.AvailableDays;
+
+        if(this.serverResponse.Employers != null){
+        this.wei.email = this.serverResponse.Employers.Email;
+        this.wei.name = this.serverResponse.Employers.Name;
+        this.wei.phone = this.serverResponse.Employers.Phone;
+        }
+        console.log("......");
+        console.log(this.bi);
+        console.log("......");
+        console.log(this.spo);
+        console.log("......");
+        console.log(this.wei);
+        console.log("......");
+        
+      });
 
       //console.log(JSON.stringify(this.serverResponse));
   }

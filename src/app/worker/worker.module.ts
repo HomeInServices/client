@@ -1,4 +1,6 @@
 ﻿import { NgModule } from "@angular/core";
+import { FormsModule } from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 import { WorkerComponent } from './worker.component';
 import { ThankyouworkerComponent } from './thankyouworker/thankyouworker.component';
@@ -11,7 +13,9 @@ import { WorkerRoutingModule } from './worker-routing.module';
  */
 @NgModule({
     imports: [        
-        WorkerRoutingModule
+        WorkerRoutingModule,
+        FormsModule,
+        CommonModule
     ],
     declarations: [
       WorkerComponent,
